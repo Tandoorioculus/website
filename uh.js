@@ -1,5 +1,30 @@
-function clicked(){
-    let num = Math.floor(document.getElementById("b").innerHTML);
-    num++;
-    document.getElementById("b").innerHTML=num;
+let gridArray = [['c','1','b','1'],['1','2','2','1'],['1','b','1','c'],['1','1','1','c']];
+let game = 0;
+function leftClicked(thingID){
+    if(gridArray[thingID[0]][thingID[1]]==='b'&&game===0&&document.getElementById(thingID).style.backgroundColor!=="orange"){
+        document.getElementById(thingID).style.backgroundColor="red";
+
+        const para = document.createElement("p");
+        const node = document.createTextNode("You lost the game");
+        para.appendChild(node);
+        const element = document.getElementById("winLose");
+        element.appendChild(para);
+        game=1;
+    }
+    else if(game===0&&document.getElementById(thingID).style.backgroundColor!=="orange"){
+        document.getElementById(thingID).style.backgroundColor="gray";
+    }
+}
+function rightClicked(thingID){
+    if(document.getElementById(thingID).style.backgroundColor==="orange"&&game===0)
+        document.getElementById(thingID).style.backgroundColor="lightgreen";
+    else if(game===0&&document.getElementById(thingID).style.backgroundColor!=="gray"&&document.getElementById(thingID).style.backgroundColor!=="red"){
+        document.getElementById(thingID).style.backgroundColor="orange";
+    }
+}
+function fill(thingID){
+    document.getElementById(thingID).style.backgroundColor="gray";
+    if(thingID[0]<=4&&gridArray[thingID[0]]){
+
+    }
 }

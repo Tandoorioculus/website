@@ -24,8 +24,8 @@ function rightClicked(thingID){
 }
 function fill(thingID){
     document.getElementById(thingID).style.backgroundColor="gray";
-    if(thingID[0]<=4&&gridArray[thingID[0]]){
-
+    if(gridArray[thingID[0]][thingID[1]]==='0'){
+        
     }
     document.getElementById(thingID).innerHTML=gridArray[thingID[0]][thingID[1]];
 }

@@ -2,7 +2,10 @@ p{
     text-align: center;
     font-size: 20px;
 }
-#button{
-    display: flex;
-    justify-content: center;
+button{
+    background-color: lightgreen;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
 }

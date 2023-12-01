@@ -1,4 +1,4 @@
-let gridArray = [['0','1','b','1'],['1','2','2','1'],['1','b','1','0'],['1','1','1','0']];
+let gridArray = [['0','0','0','0'],['1','1','1','0'],['1','b','1','0'],['1','1','1','0']];
 let game = 0;
 function leftClicked(thingID){
     if(gridArray[thingID[0]][thingID[1]]==='b'&&game===0&&document.getElementById(thingID).style.backgroundColor!=="orange"){
@@ -23,9 +23,23 @@ function rightClicked(thingID){
     }
 }
 function fill(thingID){
+    let ID = parseInt(thingID);
+
     document.getElementById(thingID).style.backgroundColor="gray";
-    if(gridArray[thingID[0]][thingID[1]]==='0'){
-        
-    }
     document.getElementById(thingID).innerHTML=gridArray[thingID[0]][thingID[1]];
+
+    if(gridArray[thingID[0]][thingID[1]]==='0'){
+        if(thingID[0]+1<4&&gridArray[thingID[0]][thingID[1]]!=='b'){
+            
+        }
+        if(thingID[0]-1>=0&&gridArray[thingID[0]-1][thingID[1]]!=='b'){
+            
+        }
+        if(Math.floor(ID/10)<4&&gridArray[Math.floor(ID/10)][ID%10+1]!=='b'){
+            fill((ID+1)+"");
+        }
+        if(thingID[1]-1>=0&&gridArray[thingID[0]][thingID[1]-1]!=='b'){
+            
+        }
+    }
 }

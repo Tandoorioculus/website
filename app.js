@@ -1,4 +1,4 @@
-let gridArray = [['0','0','0','0'],['1','1','1','0'],['1','b','1','0'],['1','1','1','0']];
+let gridArray = [['0','0','0','0'],['1','1','1','0'],['2','b','2','0'],['2','b','2','0']];
 let game = 0;
 function leftClicked(thingID){
     if(gridArray[thingID[0]][thingID[1]]==='b'&&game===0&&document.getElementById(thingID).style.backgroundColor!=="orange"){
@@ -13,6 +13,12 @@ function leftClicked(thingID){
     }
     else if(game===0&&document.getElementById(thingID).style.backgroundColor!=="orange"){
         fill(thingID);
+    }
+    let y=0;
+    for(let x=0;x<gridArray[0].length*gridArray.length;x++){
+        if(document.getElementById(x+""+y).style.backgroundColor==="lightgreen"&&gridArray[x][y]!=='b'){
+            
+        }
     }
 }
 function rightClicked(thingID){

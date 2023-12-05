@@ -14,11 +14,23 @@ function leftClicked(thingID){
     else if(game===0&&document.getElementById(thingID).style.backgroundColor!=="orange"){
         fill(thingID);
     }
-    let y=0;
-    for(let x=0;x<gridArray[0].length*gridArray.length;x++){
-        if(document.getElementById(x+""+y).style.backgroundColor==="lightgreen"&&gridArray[x][y]!=='b'){
-            
+    if(game!==1){
+        game=2;
+        for(let x=0;x<gridArray.length;x++){
+            for(let y=0;y<gridArray[0].length;y++){
+                let string = x+""+y;
+                if(){
+                    game=0;
+                }
+            }
         }
+    }
+    if(game===2){
+        const bruh = document.createElement("p");
+        const bro = document.createTextNode("You won the game!");
+        bruh.appendChild(bro);
+        const cuh = document.getElementById("winLose");
+        cuh.appendChild(bro);
     }
 }
 function rightClicked(thingID){
